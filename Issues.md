@@ -1,0 +1,1 @@
+i can only show or display 100 ( need to fix it to drf pagination and nuxt3 pagination later )
