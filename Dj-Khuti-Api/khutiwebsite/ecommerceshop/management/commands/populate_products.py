@@ -44,9 +44,9 @@ class Command(BaseCommand):
             name = fake.sentence(nb_words=6)
             description = fake.paragraph(nb_sentences=5)
             # slug = slugify(title)
-            # image = self.generate_image()
-            categorys = random.choice(category)  # Randomly pick an author
-            brands = random.choice(brand)  # Randomly pick an author
+            image = self.generate_image()
+            categorys = random.choice(category)  # Randomly pick an category
+            brands = random.choice(brand)  # Randomly pick an brands
 
             # Create a new Post object
             post = Product.objects.create(
@@ -59,29 +59,29 @@ class Command(BaseCommand):
             )
 
             # Save the image file
-            # post.image.save(
-            #     f"image_{post.id}.png", ContentFile(image.getvalue()), save=True
-            # )
+            post.image.save(
+                f"image_{post.id}.png", ContentFile(image.getvalue()), save=True
+            )
 
         self.stdout.write(
             self.style.SUCCESS("Successfully added 1000 fake posts with images")
         )
 
-    # def generate_image(self):
-    #     # Create an image using Pillow (100x100 with random colors)
-    #     image = Image.new(
-    #         "RGB",
-    #         (100, 100),
-    #         color=(
-    #             random.randint(0, 255),
-    #             random.randint(0, 255),
-    #             random.randint(0, 255),
-    #         ),
-    #     )
+    def generate_image(self):
+        # Create an image using Pillow (100x100 with random colors)
+        image = Image.new(
+            "RGB",
+            (100, 100),
+            color=(
+                random.randint(0, 255),
+                random.randint(0, 255),
+                random.randint(0, 255),
+            ),
+        )
 
-    #     # Save the image to a BytesIO object
-    #     image_io = io.BytesIO()
-    #     image.save(image_io, format="PNG")
-    #     image_io.seek(0)
+        #     # Save the image to a BytesIO object
+        image_io = io.BytesIO()
+        image.save(image_io, format="PNG")
+        image_io.seek(0)
 
-    #     return image_io
+        return image_io

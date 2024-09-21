@@ -6,7 +6,7 @@ import axios from 'axios';
 export default defineEventHandler(async (event) => {
     try {
         // Fetch data from the Django backend
-        const response = await axios.get('http://127.0.0.1:8000/api/porducts/?limit=100&offset=100');
+        const response = await axios.get('http://127.0.0.1:8000/api/porducts/?limit=100&offset=0');
 
         // Check if response status is OK
         if (response.status === 200) {

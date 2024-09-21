@@ -24,6 +24,7 @@ class PostsModelAdmin(admin.ModelAdmin):
     # fields = [("slug", "title"), "description"]
     # list_display = ["title"]
     prepopulated_fields = {"slug": ["name"]}
+    # prepopulated_fields = {"name": ["slug"]}
 
 
 # Register your models here.

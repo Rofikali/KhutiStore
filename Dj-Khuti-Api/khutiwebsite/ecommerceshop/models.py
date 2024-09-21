@@ -27,8 +27,8 @@ class Brand(models.Model):
 
 
 class Category(MPTTModel):
-    slug = models.SlugField(max_length=100, unique=False) # check unique 
     name = models.CharField(max_length=50, unique=True)
+    slug = models.SlugField(max_length=100, unique=False)  # check unique
     parent = TreeForeignKey(
         "self", on_delete=models.CASCADE, null=True, blank=True, related_name="children"
     )
@@ -49,6 +49,7 @@ class Product(models.Model):
     brand = models.ForeignKey(
         Brand, related_name="roduct_brand", on_delete=models.CASCADE
     )
+    image = models.ImageField(upload_to="Product/%Y/%m/%d/")
 
     def __str__(self):
         return self.name
