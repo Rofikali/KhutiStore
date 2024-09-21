@@ -52,23 +52,23 @@ export default function useFetchPosts() {
     };
 
     // Method to fetch a single post by ID
-    // const fetchSinglePost = async (id) => {
-    //     try {
-    //         console.log(`Fetching single post with ID: ${id}`);
-    //         const singlePost = await $fetch(`/api/posts/${id}`); // Ensure this path is also absolute
-    //         console.log('Single Post:', singlePost);
-    //         return singlePost; // Return the fetched single post
-    //     } catch (err) {
-    //         console.log('Error fetching single post:', err);
-    //         throw err; // Handle the error appropriately
-    //     }
-    // };
+    const fetchSingleProduct = async (id) => {
+        try {
+            console.log(`Fetching single post with ID: ${id}`);
+            const singlePost = await $fetch(`/api/posts/${id}`); // Ensure this path is also absolute
+            console.log('Single Post:', singlePost);
+            return singlePost; // Return the fetched single post
+        } catch (err) {
+            console.log('Error fetching single post:', err);
+            throw err; // Handle the error appropriately
+        }
+    };
 
     return {
         products,
         pending,
         error,
         fetchAllProducts, // Fetch all posts
-        // fetchSinglePost, // Fetch a single post by ID
+        fetchSingleProduct, // Fetch a single post by ID
     };
 }

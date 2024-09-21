@@ -9,15 +9,15 @@
                     <section class="text-gray-600 body-font">
                         <div class="container px-5 py-24 mx-auto">
                             <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
-                                <div class="p-4 md:w-1/3 sm:mb-0 mb-6" v-for="post in products.results" :key="post.id">
+                                <div class="p-4 md:w-1/3 sm:mb-0 mb-6" v-for="product in products.results" :key="product.id">
                                     <div class="rounded-lg h-64 overflow-hidden">
-                                        <NuxtImg v-if="post?.image" :src="post.image"
+                                        <NuxtImg v-if="product?.image" :src="product.image"
                                             class="object-cover object-cover h-full w-full" loading="lazy" />
                                     </div>
                                     <h2 class="text-xl font-medium title-font text-gray-900 mt-5">Shooting Stars</h2>
                                     <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
-                                        <NuxtLink :to="{ name: 'posts-id', params: { id: post.id } }">
-                                            {{ post.name }} - {{ post.id }}
+                                        <NuxtLink :to="{ name: 'products-id', params: { id: product.id } }">
+                                            {{ product.name }} - {{ product.id }}
                                         </NuxtLink>
                                     </h2>
                                     <a class="text-indigo-500 inline-flex items-center mt-3">Learn More
@@ -43,8 +43,8 @@ import useFetchProducts from '~/composables/useFetchProducts';
 
 // Ensure you have all the necessary imports
 const { products, pending, error, fetchAllProducts } = useFetchProducts()
-// console.log('index page' posts);
-// Fetch all posts when the component is mounted
+// console.log('index page' products);
+// Fetch all products when the component is mounted
 onMounted(() => {
     fetchAllProducts()
 });

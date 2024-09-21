@@ -4,11 +4,9 @@
             <div class="container px-5 py-24 mx-auto">
                 <div v-for="post in posts" :key="post.id" class="-my-8 divide-y-2 divide-gray-100">
                     <div class="py-8 flex flex-wrap md:flex-nowrap">
-                        <a class="block relative h-48 rounded overflow-hidden px-8">
-                            <!-- <NuxtImg :src="post.image" alt="Image-Not-Found" /> -->
-                            <NuxtImg :src="post.image" alt="Image-Not-Found" loading="lazy" />
-
-                        </a>
+                        <div class="block relative h-48 rounded overflow-hidden px-8">
+                            <NuxtImg :src="post.image" alt="Image-Not-Found" loading="lazy" class="h-full w-full" />
+                        </div>
                         <div class="md:flex-grow">
                             <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
                                 <NuxtLink :to="{ name: 'posts-id', params: { id: post.id } }">
