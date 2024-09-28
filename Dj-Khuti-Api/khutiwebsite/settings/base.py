@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     # external apps
     "rest_framework",
     "corsheaders",
+    # tinemce 
+    'tinymce',
 ]
 
 MIDDLEWARE = [

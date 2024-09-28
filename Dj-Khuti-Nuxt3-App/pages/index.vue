@@ -9,8 +9,9 @@
         <div v-if="error">error - {{ error }}</div>
         <div v-else-if="pending">pending ... </div>
 
-        <div v-if="posts">
-            <LazyMaincontent :posts="posts.results" :pending="pending" />
+        <div v-else="posts">
+            <!-- <LazyMaincontent :posts="posts.results" :pending="pending" /> -->
+            <LazyPosts :posts="posts.results" :pending="pending" />
         </div>
         <!-- dta {{ posts }} -->
     </div>

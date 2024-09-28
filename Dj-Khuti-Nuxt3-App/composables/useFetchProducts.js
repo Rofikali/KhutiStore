@@ -45,7 +45,7 @@ export default function useFetchPosts() {
         try {
             console.log('Refreshing posts data...');
             await refresh(); // Trigger a re-fetch of the data
-            console.log('Posts:', products.value);
+            console.log('products:', products.value);
         } catch (err) {
             console.log('Error fetching posts:', err);
         }

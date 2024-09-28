@@ -2,7 +2,7 @@
     <div v-if="pending">Loading post...</div>
     <div v-else-if="error">Error: {{ error.message }}</div>
     <div v-else="post">
-        <LazyPostdetail :post="post" />
+        <LazyPostsSingle :post="post" />
     </div>
 </template>
 

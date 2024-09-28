@@ -4,7 +4,8 @@
         <div v-if="pending">Loading post...</div>
         <div v-else-if="error">Error: {{ error.message }}</div>
         <div v-else="Product">
-            <LazyProductdetail :product="product" />
+            <!-- <LazyProductdetail :product="product" /> -->
+            <LazyProductsSingle :product="product" :pending="pending" />
         </div>
     </div>
 </template>

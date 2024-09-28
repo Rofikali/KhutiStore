@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>all single page here</h3>
+        <h1>Products Category Listing here.</h1>
     </div>
 </template>
 
@@ -8,4 +8,4 @@
 
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped></style>

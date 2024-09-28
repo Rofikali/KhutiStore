@@ -32,7 +32,7 @@ class PostsModelAdmin(admin.ModelAdmin):
 class PostsModelAdmin(admin.ModelAdmin):
     # pass
     # list_display = ("__str__", "title", "description", "author")
-    list_display = ("id", "name", "description",'category')
+    list_display = ("id", "name", "description",'category','brand')
     # fields = [("slug", "title"), "description"]
     # list_display = ["title"]
     # prepopulated_fields = {"slug": ["title"]}
